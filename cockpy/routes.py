@@ -7,9 +7,11 @@ from flask_login import login_required, login_user, logout_user, current_user
 @app.route('/', methods=["POST", "GET"])
 def login():
     form_login = FormLogin()
+    usuario = Usuario.query.filter_by(usuario=form_login.usuario.data).first()
+    print(current_user)
     if form_login.validate_on_submit():
-        usuario = Usuario.query.filter_by(usuario=form_login.usuario.data).first()
         if usuario and usuario.senha == form_login.senha.data:
+            login_user(usuario, remember=True)
             print("Logou")
             return redirect("home")
         else:
@@ -20,4 +22,8 @@ def login():
 @app.route("/home")
 @login_required
 def home():
-    return render_template("home.html")
+    return render_template("home.html", usuario_atual=current_user)
+
+@app.route("/exemplo")
+def exemplo():
+    return render_template("exemplo.html")

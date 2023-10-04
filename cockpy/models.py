@@ -1,7 +1,11 @@
-from cockpy import database
+from cockpy import database, login_manager
 from flask_login import UserMixin
 
-class Usuario(database.Model):
+@login_manager.user_loader
+def load_usuario(id_usuario):
+    return Usuario.query.get(id_usuario)
+
+class Usuario(database.Model, UserMixin):
     id = database.Column(database.Integer, primary_key=True)
     nome = database.Column(database.String, nullable=False)
     usuario = database.Column(database.String, nullable=False, unique=True)

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cockpy</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+  integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Cockpy</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+      data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">Sair</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <span data-feather="home"></span>
+                Servidores
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file"></span>
+                Network
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="shopping-cart"></span>
+                Storage/AIX
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="users"></span>
+                Soluções
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="bar-chart-2"></span>
+                Usuários
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="layers"></span>
+                Servidores Excluídos
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+      <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+        <h2>Servidores</h2>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>Hostname</th>
+                <th>IP</th>
+                <th>Sistema Operacional</th>
+                <th>Função</th>
+                <th>Responsável</th>
+                <th>Unidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SA1-TEC</td>
+                <td>10.104.1.1</td>
+                <td>Windows Server 2019 Standard</td>
+                <td>Monitor de Temperatura</td>
+                <td>Operações Infraestrutura</td>
+                <td>GBS</td>
+              </tr>
+              <tr>
+                <td>SA1-ATB</td>
+                <td>10.8.1.1</td>
+                <td>Windows Server 2016 Standard</td>
+                <td>Aplicação KCOR</td>
+                <td>Sistemas Especialistas</td>
+                <td>AutoBAn</td>
+              </tr> 
+              <tr>
+                <td>DC01-CCR</td>
+                <td>10.72.1.1</td>
+                <td>Windows Server 2022 Standard</td>
+                <td>Domain Controller / DNS / DHCP</td>
+                <td>Operações Infraestrutura</td>
+                <td>CCR Holding</td>
+              </tr>    
+              <tr>
+                <td>SI1-CCR</td>
+                <td>10.72.1.2</td>
+                <td>Windows Server 2012 R2 Standard</td>
+                <td>Print Server</td>
+                <td>Operações Infraestrutura</td>
+                <td>CCR Holding</td>
+              </tr>      
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>
