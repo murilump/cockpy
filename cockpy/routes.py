@@ -1,6 +1,6 @@
 from cockpy import app, database, bcrypt
 from cockpy.forms import FormLogin, FlaskForm
-from cockpy.models import Usuario
+from cockpy.models import Usuario, Servidor
 from flask import render_template, url_for, redirect
 from flask_login import login_required, login_user, logout_user, current_user
 
@@ -16,13 +16,19 @@ def login():
             return redirect("home")
         else:
             print("Usuario ou senha incorreto")
-            redirect(url_for("login"))
     return render_template("login.html", form=form_login)
 
 @app.route("/home")
 @login_required
 def home():
-    return render_template("home.html", usuario_atual=current_user)
+    servidores = Servidor.query.all()[:10]
+    return render_template("home.html", servidores=servidores)
+
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("login")) 
 
 @app.route("/exemplo")
 def exemplo():

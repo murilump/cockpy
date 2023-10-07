@@ -4,8 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <link rel="stylesheet" href="../static/css/cockpy.css">
 </head>
 <body>
-  <h1>{{usuario_atual}}</h1>
+  
+<div class="container">
+  <header>
+    <nav class="nav-bar">
+      <div class="nav-bar-logo">
+        <a>Cockpy</a>
+      </div>
+      <div class="nav-bar-pesquisar">
+        <input class="input-pesquisar" placeholder="Pesquisar">
+      </div>
+      <div class="nav-bar-sair">
+        <a class="a-sair" href="{{url_for('logout')}}">Sair</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="sidebar">
+    <ul>
+      <li class="li-item">
+        <a href="#">
+          Servidores
+        </a>
+      </li>
+      <li class="li-item">
+        <a href="#">
+          Storage & AIX
+        </a>
+      </li>
+      <li class="li-item">
+        <a href="#">
+          Network
+        </a>
+      </li>
+      <li class="li-item">
+        <a href="#">
+          Soluções
+        </a>
+      </li>
+      <li class="li-item">
+        <a href="#">
+          Usuários
+        </a>
+      </li>
+      <li class="li-item">
+        <a href="#">
+          Servidores Excluídos
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="div-filtro">
+    <p class="p-filtro">Filtro</p>
+  </div>
+  
+  {% block tabela%}
+  <div class="div-tabela">
+      <table class="tabela-servidores">
+        <thead>
+          <tr>
+            <th>Hostname</th>
+            <th>IP</th>
+            <th>Função</th>
+            <th>Responsável</th>
+            <th>Sistema Operacional</th>
+            <th>Unidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for servidor in servidores %}
+          <tr>
+            <td>{{servidor.hostname}}</td>
+            <td>{{servidor.ip}}</td>
+            <td>{{servidor.funcao}}</td>
+            <td>{{servidor.responsavel}}</td>
+            <td>{{servidor.so}}</td>
+            <td>{{servidor.unidade}}</td>
+          </tr>
+          {% endfor %} 
+        </tbody>
+      </table>
+  </div>
+  {% endblock %}
+</div>
+
 </body>
 </html>
