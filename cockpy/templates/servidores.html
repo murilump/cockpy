@@ -1,0 +1,34 @@
+{% extends "home.html" %}
+
+  {% block conteudo %}
+  <div class="div-filtro">
+    <p class="p-filtro">Filtros</p>
+  </div>
+  
+  <div class="div-tabela">
+      <table class="tabela-servidores">
+        <thead>
+          <tr>
+            <th>Hostname</th>
+            <th>IP</th>
+            <th>Função</th>
+            <th>Responsável</th>
+            <th>Sistema Operacional</th>
+            <th>Unidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for servidor in servidores %}
+          <tr>
+            <td>{{servidor.hostname}}</td>
+            <td>{{servidor.ip}}</td>
+            <td>{{servidor.funcao}}</td>
+            <td>{{servidor.responsavel}}</td>
+            <td>{{servidor.so}}</td>
+            <td>{{servidor.unidade}}</td>
+          </tr>
+          {% endfor %} 
+        </tbody>
+      </table>
+  </div>
+  {% endblock %}

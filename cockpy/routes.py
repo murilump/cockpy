@@ -18,18 +18,23 @@ def login():
             print("Usuario ou senha incorreto")
     return render_template("login.html", form=form_login)
 
-@app.route("/home")
-@login_required
-def home():
-    servidores = Servidor.query.all()[:10]
-    return render_template("home.html", servidores=servidores)
-
 @app.route("/logout")
 @login_required
 def logout():
     logout_user()
     return redirect(url_for("login")) 
 
-@app.route("/exemplo")
-def exemplo():
-    return render_template("exemplo.html")
+@app.route("/home")
+@login_required
+def home():
+    return render_template("home.html")
+
+@app.route("/servidores")
+@login_required
+def servidores():
+    servidores = Servidor.query.all()[:10]
+    return render_template("servidores.html", servidores=servidores)
+
+@app.route("/cadastrar_servidor")
+def cadastrar_servidor():
+    return render_template("cadastrar_servidor.html")

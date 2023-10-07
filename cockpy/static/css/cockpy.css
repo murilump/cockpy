@@ -1,3 +1,5 @@
+/* Inicio home.html */
+
 *{
     font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     box-sizing: border-box;
@@ -28,13 +30,15 @@ container{
     padding-top: 5px;
     text-align: center;
     border: 1px solid #1D2024;
-    font-size: 20px;
+    font-size: 22px;
 }
 
+.a-logo{
+    color: #FFFFFF;
+}
 .nav-bar-pesquisar{
     background-color: #4A4E53;
     width: 80%;
-    font-size: 1rem
 }
 
 .input-pesquisar{
@@ -45,7 +49,7 @@ container{
     outline: none;
     padding-left: 20px;
     color: white;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .input-pesquisar:focus{
@@ -58,23 +62,22 @@ container{
     width: 5%;
     padding: 10px;
     text-align: center;
-    text-align: center;
     border: 1px solid #1D2024;
 }
 
 .a-sair{
-    text-decoration: none;
+    /* text-decoration: none; */
     color: #FFFFFF;
 }
 
-.a-sair:hover, .nav-bar-logo:hover{
+.a-sair:hover, .a-logo:hover{
     color: #797a7c;
     cursor: pointer;
 }
 
 .sidebar{
     background-color: #F8F9FA;
-    height: 600px;
+    height: 100vh;
     width: 15%;
     float: left;
     border: 1px solid #DFE0E1;
@@ -84,24 +87,30 @@ ul{
     margin-top: 15px;
     margin-bottom: 15px;
     list-style-type: none;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 li{
-    text-decoration: none;
-    color: #4A4E53;
     margin: 20px;
     text-align: center;
 }
 
-li:hover{
+.a-sidebar{
+    color: #4A4E53;
+}
+
+.a-sidebar:hover{
     color: #007BFF;
 }
+
+/* Fim home.html */
+
+/* Inicio servidores.html */
 
 .div-filtro{
     /* float: right; */
     width: 100%;
-    height: 150px;
+    height: max-content;
     background-color: #FEFEFE;
     border: 1px solid #DFE0E1;
 }
@@ -109,18 +118,23 @@ li:hover{
 .p-filtro{
     padding: 8px;
     text-align: left;
-    font-size: 13px;
+    font-size: 16px;
     padding-left: 16.2%;
 }
 
 .div-tabela{
     background-color: #FEFEFE;
-    height: 450px;
     width: 100%;
 }
 
 table{
-    font-size: 12px;
-    padding: 15px;
+    font-size: 16px;
+    padding: 20px;
     width: 85%;
+    border-bottom: 1px solid #DFE0E1;
 }
+
+/* Fim servidores.html */
+
+/* Inicio cadastrar_servidor.html */
+
