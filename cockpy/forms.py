@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, EqualTo, Length, ValidationError
-from cockpy.models import Usuario, Servidor
+from cockpy.models import Usuario, Servidor, SistemaOperacional, Unidade, Responsavel
 
 class FormLogin(FlaskForm):
     usuario = StringField("Usuário", validators=[DataRequired()])

@@ -1,6 +1,6 @@
 from cockpy import app, database, bcrypt
 from cockpy.forms import FormLogin, FormAdicionarServidor, FlaskForm
-from cockpy.models import Usuario, Servidor
+from cockpy.models import Usuario, Servidor, SistemaOperacional, Unidade, Responsavel
 from flask import render_template, url_for, redirect
 from flask_login import login_required, login_user, logout_user, current_user
 
@@ -38,6 +38,7 @@ def servidores():
 @app.route("/cadastrar_servidor")
 def cadastrar_servidor():
     form_add_servidor = FormAdicionarServidor()
+    
     if form_add_servidor.validate_on_submit():
         print("Clicou")
     return render_template("cadastrar_servidor.html", form=form_add_servidor)
