@@ -6,29 +6,37 @@
   </div>
   
   <div class="div-tabela">
-      <table class="tabela-servidores">
-        <thead>
-          <tr>
-            <th>Hostname</th>
-            <th>IP</th>
-            <th>Função</th>
-            <th>Responsável</th>
-            <th>Sistema Operacional</th>
-            <th>Unidade</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for servidor in servidores %}
-          <tr>
-            <td>{{servidor.hostname}}</td>
-            <td>{{servidor.ip}}</td>
-            <td>{{servidor.funcao}}</td>
-            <td>{{servidor.responsavel}}</td>
-            <td>{{servidor.so}}</td>
-            <td>{{servidor.unidade}}</td>
-          </tr>
-          {% endfor %} 
-        </tbody>
-      </table>
+    <div class="div-cabecalho-tabela">
+      <h2 id="h2-servidores">Servidores</h2>
+
+      <a href="{{url_for('cadastrar_servidor')}}">
+      <img class="img-add-servidor" src="../static/img/icons8-add-36.png" title="Adicionar Servidor">
+      </a>
+    </div>
   </div>
+    <table class="tabela-servidores">
+      <thead>
+        <tr>
+          <th>Hostname</th>
+          <th>IP</th>
+          <th>Função</th>
+          <th>Responsável</th>
+          <th>Sistema Operacional</th>
+          <th>Unidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for servidor in servidores %}
+        <tr>
+          <td>{{servidor.hostname}}</td>
+          <td>{{servidor.ip}}</td>
+          <td>{{servidor.funcao}}</td>
+          <td>{{servidor.responsavel}}</td>
+          <td>{{servidor.so}}</td>
+          <td>{{servidor.unidade}}</td>
+        </tr>
+        {% endfor %} 
+      </tbody>
+    </table>
+    
   {% endblock %}

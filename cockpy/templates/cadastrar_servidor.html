@@ -2,6 +2,27 @@
 
 {% block conteudo %}
 
-<div>teste</div>
+<div class="div-add-servidor">
+    <form method="POST">
+        <div class="div-add-servidor">
+            {{form.csrf_token}}
+            {{form.hostname.label()}}
+            {{form.hostname()}}
+            {{form.ip.label()}}
+            {{form.ip()}}
+            {{form.so.label()}}
+            {{form.so()}}
+            {{form.funcao.label()}}
+            {{form.funcao()}}
+            {{form.responsavel.label()}}
+            {{form.responsavel()}}
+            {{form.unidade.label()}}
+            {{form.unidade()}}
+            <div class="btn-add-servidor">
+            {{form.botao_add()}}
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

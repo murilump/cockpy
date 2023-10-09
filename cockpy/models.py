@@ -20,3 +20,15 @@ class Servidor(database.Model):
     funcao = database.Column(database.String, nullable=False)
     responsavel = database.Column(database.String, nullable=False)
     unidade = database.Column(database.String, nullable=False)
+
+class Unidade(database.Model):
+    id = database.Column(database.Integer, primary_key=True)
+    unidade = database.Column(database.String, nullable=False)
+
+class SistemaOperacional(database.Model):
+    id = database.Column(database.Integer, primary_key=True)
+    so = database.Column(database.String, nullable=False)
+
+class Responsavel(database.Model):
+    id = database.Column(database.Integer, primary_key=True)
+    responsavel = database.Column(database.String, nullable=False)

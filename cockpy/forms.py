@@ -8,11 +8,12 @@ class FormLogin(FlaskForm):
     senha = PasswordField("Senha", validators=[DataRequired()])
     botao_login = SubmitField("Entrar")
 
-class FormInserirServidor(FlaskForm):
+class FormAdicionarServidor(FlaskForm):
     hostname = StringField("Hostname", validators=[DataRequired()])
     ip = StringField("Hostname", validators=[DataRequired()])
     so = SelectField("Sistema Operacional", validators=[DataRequired()])
     funcao = StringField("Função", validators=[DataRequired()])
     responsavel = StringField("Responsável", validators=[DataRequired()])
     unidade = SelectField("Unidade", validators=[DataRequired()])
+    botao_add = SubmitField("Adicionar")
 

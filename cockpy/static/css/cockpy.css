@@ -12,6 +12,10 @@ body{
     margin: 0;
 }
 
+img:hover{
+    cursor: pointer;
+}
+
 container{
     display: flex;
 }
@@ -132,9 +136,32 @@ table{
     padding: 20px;
     width: 85%;
     border-bottom: 1px solid #DFE0E1;
+    
+}
+
+tr{
+    border-bottom: 1px solid #DFE0E1;
+}
+
+.div-cabecalho-tabela{
+    display: flex;
+    justify-content: space-between;
+}
+
+#h2-servidores, .img-add-servidor{
+    margin: 15px;
 }
 
 /* Fim servidores.html */
 
 /* Inicio cadastrar_servidor.html */
 
+.div-add-servidor{  
+    display: flex;
+    flex-direction: column;
+}
+
+#botao_add{
+    width: 100px;
+    
+}
